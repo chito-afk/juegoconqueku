@@ -5,6 +5,7 @@ using UnityEngine;
 public class WaterDoorCollision : MonoBehaviour {
 
 	public GameObject WaterGirl;
+	public Material Negro;
 
 	// Use this for initialization
 	void Start()
@@ -22,8 +23,7 @@ public class WaterDoorCollision : MonoBehaviour {
 	{
 		if (other.gameObject.tag == "Water")
 		{
-			var WaterGirlRenderer = WaterGirl.GetComponent<Renderer>();
-			WaterGirlRenderer.material.SetColor("_Color", Color.black);
+			WaterGirl.GetComponent<MeshRenderer>().material = Negro;
 		}
 	}
 }

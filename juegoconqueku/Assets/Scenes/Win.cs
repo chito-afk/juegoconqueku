@@ -14,7 +14,7 @@ public class Win : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (FireBoy.GetComponent<Renderer>().material == WaterGirl.GetComponent<Renderer>().material)
+		if (FireBoy.GetComponent<MeshRenderer>().material == WaterGirl.GetComponent<MeshRenderer>().material)
 		{
 			Debug.Log("You Win!");
         }

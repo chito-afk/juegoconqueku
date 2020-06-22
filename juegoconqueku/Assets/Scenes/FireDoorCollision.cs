@@ -5,6 +5,7 @@ using UnityEngine;
 public class FireDoorCollision : MonoBehaviour {
 
 	public GameObject FireBoy;
+	public Material Negro;
 
 	// Use this for initialization
 	void Start () {
@@ -20,8 +21,7 @@ public class FireDoorCollision : MonoBehaviour {
 	{
 		if (other.gameObject.tag == "Fire")
 		{
-			var FireBoyRenderer = FireBoy.GetComponent<Renderer>();
-			FireBoyRenderer.material.SetColor("_Color", Color.black);
+			FireBoy.GetComponent<MeshRenderer>().material = Negro;
 		}
 	}
 }
