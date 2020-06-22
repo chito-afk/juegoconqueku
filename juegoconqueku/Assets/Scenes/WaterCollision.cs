@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class WaterCollision : MonoBehaviour {
+public class PlayerCollision : MonoBehaviour {
 
 	private Scene scene;
 

@@ -3,23 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class WaterCollision : MonoBehaviour {
+public class FireCollision : MonoBehaviour {
 
 	private Scene scene;
 
 	// Use this for initialization
-	void Start () {
+	void Start()
+	{
 		scene = SceneManager.GetActiveScene();
 	}
-	
+
 	// Update is called once per frame
-	void Update () {
-		
+	void Update()
+	{
+
 	}
-	private void OnTriggerEnter2D(Collider2D other) { 
-			if (other.gameObject.tag == "Fire")
-        {
+	private void OnTriggerEnter2D(Collider2D other)
+	{
+		if (other.gameObject.tag == "Water")
+		{
 			Application.LoadLevel(scene.name);
-        }
-    }
+		}
+	}
 }

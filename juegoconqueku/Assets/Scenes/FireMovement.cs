@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireMovement : MonoBehaviour {
+public class PlayerMovement : MonoBehaviour {
 
 	public float speed;
 	public float jumpVelocity;

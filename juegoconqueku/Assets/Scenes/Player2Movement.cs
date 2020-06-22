@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireMovement : MonoBehaviour {
+public class WaterMovement : MonoBehaviour
+{
 
 	public float speed;
 	public float jumpVelocity;
@@ -10,22 +11,25 @@ public class FireMovement : MonoBehaviour {
 	public Transform to;
 
 	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+	void Start()
+	{
 
-        if (Input.GetKey("d") && !Input.GetKey("a"))
-        {
+	}
+
+	// Update is called once per frame
+	void Update()
+	{
+
+		if (Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.LeftArrow))
+		{
 			transform.position += transform.TransformDirection(Vector2.right) * Time.deltaTime * speed;
-        }else if (Input.GetKey("a") && !Input.GetKey("d"))
-        {
+		}
+		else if (Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow))
+		{
 			transform.position += transform.TransformDirection(Vector2.left) * Time.deltaTime * speed;
-        }
-		if (Input.GetButtonDown("Jump"))
-        {
+		}
+		if (Input.GetKeyDown(KeyCode.UpArrow))
+		{
 			GetComponent<Rigidbody2D>().velocity = Vector2.up * jumpVelocity;
 		}
 		transform.rotation = Quaternion.Slerp(from.rotation, to.rotation, 0);
