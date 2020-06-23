@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class WaterDoorCollision : MonoBehaviour {
 
-	public GameObject WaterGirl;
-	public Material Negro;
+	public float counter;
 
 	// Use this for initialization
 	void Start()
 	{
-
+		counter = 0;
 	}
 
 	// Update is called once per frame
@@ -23,7 +22,7 @@ public class WaterDoorCollision : MonoBehaviour {
 	{
 		if (other.gameObject.tag == "Water")
 		{
-			WaterGirl.GetComponent<MeshRenderer>().material = Negro;
+			counter = counter + 1;
 		}
 	}
 }

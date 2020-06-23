@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class FireDoorCollision : MonoBehaviour {
 
-	public GameObject FireBoy;
-	public Material Negro;
 
 	// Use this for initialization
 	void Start () {
-		
+
 	}
 	
 	// Update is called once per frame
@@ -21,7 +19,7 @@ public class FireDoorCollision : MonoBehaviour {
 	{
 		if (other.gameObject.tag == "Fire")
 		{
-			FireBoy.GetComponent<MeshRenderer>().material = Negro;
+			GameObject.Find("WaterDoor").GetComponent<WaterDoorCollision>().counter += 1; ;
 		}
 	}
 }
