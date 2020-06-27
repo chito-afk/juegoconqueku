@@ -5,6 +5,7 @@ using UnityEngine;
 public class WaterDoorCollision : MonoBehaviour {
 
 	public float counter;
+	public Material black;
 
 	// Use this for initialization
 	void Start()
@@ -23,6 +24,8 @@ public class WaterDoorCollision : MonoBehaviour {
 		if (other.gameObject.tag == "Water")
 		{
 			counter = counter + 1;
+			GameObject.Find("WaterGirl").GetComponent<WaterMovement>().enabled = false;
+			GameObject.Find("WaterGirl").GetComponent<Renderer>().material = black;
 		}
 	}
 }

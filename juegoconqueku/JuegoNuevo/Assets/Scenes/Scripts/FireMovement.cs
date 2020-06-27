@@ -24,9 +24,9 @@ public class PlayerMovement : MonoBehaviour {
         {
 			transform.position += transform.TransformDirection(Vector2.left) * Time.deltaTime * speed;
         }
-		if (Input.GetButtonDown("Jump"))
+		if (Input.GetKeyDown("Jump"))
         {
-			GetComponent<Rigidbody2D>().velocity = Vector2.up * jumpVelocity;
+			transform.position += transform.TransformDirection(Vector2.up) * Time.deltaTime * jumpVelocity;
 		}
 		transform.rotation = Quaternion.Slerp(from.rotation, to.rotation, 0);
 	}

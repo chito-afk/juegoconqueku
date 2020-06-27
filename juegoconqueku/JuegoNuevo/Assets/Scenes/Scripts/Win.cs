@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Win : MonoBehaviour {
+
+	private bool MyFunctionCalled = false;
 
 	// Use this for initialization
 	void Start () {
@@ -13,11 +16,13 @@ public class Win : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		Debug.Log(GameObject.Find("WaterDoor").GetComponent<WaterDoorCollision>().counter);
-
 		if (GameObject.Find("WaterDoor").GetComponent<WaterDoorCollision>().counter == 2){
-			Debug.Log("You Win!");
-			
+				if(MyFunctionCalled == false){
+					MyFunctionCalled = true;
+					Debug.Log("You Win!");
+					SceneManager.LoadScene("Victory", LoadSceneMode.Single);
+					GameObject.Find("NextLevel").GetComponent<NextLevel>().nextLevel += 1;
+			}
 		}
 	}
 }

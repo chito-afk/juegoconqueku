@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FireDoorCollision : MonoBehaviour {
 
+	public Material black;
 
 	// Use this for initialization
 	void Start () {
@@ -20,6 +21,8 @@ public class FireDoorCollision : MonoBehaviour {
 		if (other.gameObject.tag == "Fire")
 		{
 			GameObject.Find("WaterDoor").GetComponent<WaterDoorCollision>().counter += 1; ;
+			GameObject.Find("FireBoy").GetComponent<FireMovement>().enabled = false;
+			GameObject.Find("FireBoy").GetComponent<Renderer>().material = black;
 		}
 	}
 }
